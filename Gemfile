@@ -45,6 +45,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'postgres', '~> 0.8.1'
+  gem 'pg'
 end
 
