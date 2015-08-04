@@ -1,6 +1,9 @@
-<h1>Editing User</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 well top-space">
+        <h1 class="title-ppal">Editar Usuario</h1>
+        <%= render 'form', button_name: "Actualizar usuario" %>
+        <hr>
+        <%= link_to 'Mostrar', @user, class:"btn btn-primary" %> |
+        <%= link_to 'Volver', users_path,  class:"btn btn-default" %>
+    </div>
+</div>

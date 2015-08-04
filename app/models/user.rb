@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
   
   validates :name, {presence: true}
+  validates :office, {presence: true}
 end

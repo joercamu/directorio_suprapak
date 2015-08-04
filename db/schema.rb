@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804012842) do
+ActiveRecord::Schema.define(version: 20150804141529) do
 
   create_table "departaments", force: :cascade do |t|
     t.string   "name"
@@ -33,12 +33,13 @@ ActiveRecord::Schema.define(version: 20150804012842) do
     t.string   "ext"
     t.string   "phone"
     t.integer  "departament_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "email",              default: ""
   end
 
   add_index "users", ["departament_id"], name: "index_users_on_departament_id"
