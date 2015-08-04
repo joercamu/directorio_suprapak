@@ -11,9 +11,12 @@
  font-family: 'Open Sans', sans-serif;
   color: #F24C27;
  }
- .btn-danger{
+ .btn-danger {
   background-color:#F24C27;
  }
- .btn-primary{
+ .btn-primary {
   background-color: #024959;
+ }
+ .capitalize {
+  text-transform: capitalize;
  }

@@ -41,7 +41,7 @@
             <%else%>
             <td><a href="<%= user_path(user) %>"><%= image_tag user.cover.url(:small),class:"Brand" %></a></td>
             <%end%>
-            <td><%= user.name %></td>
+            <td><label class="capitalize"><%= user.name %></label></td>
             <td><%= user.office %></td>
             <td><%= user.email %></td>
             <td><%= user.ext %></td>
