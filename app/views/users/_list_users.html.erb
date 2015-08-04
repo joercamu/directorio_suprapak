@@ -1,0 +1,44 @@
+<div>
+  <form method="GET">
+    <input name="value" class="form-control">
+    <input type="submit" class="btn btn-default">
+  </form>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Directorio Suprapak</h1>
+    <hr>
+    <%= link_to 'Nuevo contacto', new_user_path, class:"btn btn-default" %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Nombre</th>
+          <th>Cargo</th>
+          <th>Ext</th>
+          <th>Movil</th>
+          <th>Departamento</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><a href="<%= user_path(user) %>"><%= image_tag user.cover.url(:small),class:"Brand" %></a></td>
+            <td><%= user.name %></td>
+            <td><%= user.office %></td>
+            <td><%= user.ext %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.departament.name %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    
+  </div>
+</div>

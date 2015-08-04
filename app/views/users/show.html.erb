@@ -1,0 +1,40 @@
+<style>
+  strong{
+    font-size:3em;
+    text-align:center;
+  }
+</style>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 well">
+    <p>
+      <strong>Nombres:</strong>
+      <h2><%= @user.name %></h2>
+    </p>
+    <p>
+      <h2><%=image_tag @user.cover.url(:medium), class:"thumbnail" %></h2>
+    </p>
+    
+    <p>
+      <strong>Cargo:</strong>
+      <h2><%= @user.office %></h2>
+    </p>
+    
+    <p>
+      <strong>Ext:</strong>
+      <h2><%= @user.ext %></h2>
+    </p>
+    
+    <p>
+      <strong>Movil:</strong>
+      <h2><%= @user.phone %></h2>
+    </p>
+    
+    <p>Departamento:</strong>
+      <h2><%= @user.departament.name %></h2>
+    </p>
+    
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+    
+  </div>
+</div>
