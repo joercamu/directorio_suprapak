@@ -21,8 +21,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: app-dev
+ adapter: postgresql
+encoding: unicode
   
