@@ -1,15 +1,15 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2 well top-space">
-    <h1 class="title-ppal">Directorio Suprapak</h1>
+    <h1 class=""><%= link_to "Directorio Suprapak", users_path, class:"title-ppal"%></h1>
     <div class="row">
-      <div class="col-md-2">
-        <%= link_to 'Nuevo contacto', new_user_path, class:"btn btn-primary" %>    
+      <div class="col-md-3">
+        <%= link_to 'Registrate! Nuevo contacto', new_user_path, class:"btn btn-primary" %>    
       </div>
-      <div class="col-md-8">
+      <div class="col-md-9">
         <%= form_tag(controller:"users",action:"search", method: "post") do %>
         <div class="input-group">
-          <%= text_field_tag :value, nil, class:"form-control" %>
+          <%= text_field_tag :value, nil, class:"form-control", placeholder:"Buscar contato" %>
           <span class="input-group-btn">
             <%= submit_tag "Buscar", class:"btn btn-default" %>
           </span>
@@ -42,11 +42,11 @@
             <td><a href="<%= user_path(user) %>"><%= image_tag user.cover.url(:small),class:"Brand" %></a></td>
             <%end%>
             <td><label class="capitalize"><%= user.name %></label></td>
-            <td><%= user.office %></td>
-            <td><%= user.email %></td>
+            <td><%= user.office.capitalize %></td>
+            <td><%= user.email.downcase %></td>
             <td><%= user.ext %></td>
             <td><%= user.phone %></td>
-            <td><%= user.departament.name %></td>
+            <td><%= user.departament.name.capitalize %></td>
             <td><% link_to 'Show', user %>
             <% link_to 'Edit', edit_user_path(user) %>
             <%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estas Seguro?' },class:"btn btn-danger" %></td>

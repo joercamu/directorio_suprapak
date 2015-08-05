@@ -8,8 +8,15 @@
  }
 
  .title-ppal{
- font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #F24C27;
+ }
+  .title-ppal:hover{
+  color: #024959;
+  text-decoration: none;
+ }
+  .title-ppal:focus{
+  text-decoration: none;
  }
  .btn-danger {
   background-color:#F24C27;
