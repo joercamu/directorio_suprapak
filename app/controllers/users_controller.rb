@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.order(ext: :desc)
   end
   
   def search
-    @users = User.where("name LIKE :name",{:name => "%#{params[:value]}%"})
+    @users = User.where("name LIKE :name",{:name => "%#{params[:value]}%"}).order(ext: :desc)
   end
 
   # GET /users/1

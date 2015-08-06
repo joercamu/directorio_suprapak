@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 #gem set for mine
 gem 'paperclip', '~> 4.3.0'
+gem "paperclip-dropbox", ">= 1.1.7"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

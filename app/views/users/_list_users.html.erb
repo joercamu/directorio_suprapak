@@ -36,12 +36,13 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <%#if user.cover_file_name.nil? %>
-            <%if user %>
-            <td><a href="<%= user_path(user)%>"><img src="//www.gravatar.com/avatar/55ad31b352935231c7007cf3d855d2d0?s=80&d=retro" height="48" with="48"></a></td>
+            
+            <%if user.cover.exists?  %>
+              <td><a href="<%= user_path(user) %>"><%= image_tag user.cover.url(:small) ,class:"Brand" %></a></td>
             <%else%>
-            <td><a href="<%= user_path(user) %>"><%= image_tag user.cover.url(:small),class:"Brand" %></a></td>
+              <td><a href="<%= user_path(user)%>"><img src="//www.gravatar.com/avatar/55ad31b352935231c7007cf3d855d2d0?s=80&d=retro" height="48" with="48"></a></td>
             <%end%>
+            
             <td><label class="capitalize"><%= user.name %></label></td>
             <td><%= user.office.capitalize %></td>
             <td><%= user.email.downcase %></td>
