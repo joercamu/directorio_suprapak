@@ -20,10 +20,10 @@
           <h2><%= @user.name.capitalize %></h2>
         </p>
         <p>
-          <%if @user.cover_file_name.nil?%>
-          <h2><img src="https://avatars3.githubusercontent.com/u/11998802?v=3&s=460" class="thumbnail" with="300" height="300"></h2>
+          <%if @user.cover.exists?%>
+            <h2><%=image_tag @user.cover.url(:medium), class:"thumbnail" %></h2>
           <%else%>
-          <h2><%=image_tag @user.cover.url(:medium), class:"thumbnail" %></h2>
+            <h2><img src="https://avatars3.githubusercontent.com/u/11998802?v=3&s=460" class="thumbnail" with="300" height="300"></h2>
           <%end%>
         </p>
        
