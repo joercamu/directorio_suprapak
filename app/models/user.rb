@@ -14,6 +14,17 @@ class User < ActiveRecord::Base
     :styles => {:medium => "300x300>", :small => "48x48"},
     :dropbox_options => {}
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/  
+  
+  def avatar
+    email_address = self.email.downcase
+     
+    # create the md5 hash
+    hash = Digest::MD5.hexdigest(email_address)
+     
+    # compile URL which can be used in <img src="RIGHT_HERE"...
+    image_src = "http://www.gravatar.com/avatar/#{hash}"
+  end
+  
   #the Method change to lowcase the name of user table  before save
   private
     def downcase_stuff
